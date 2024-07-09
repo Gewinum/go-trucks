@@ -2,16 +2,26 @@ package main
 
 import (
 	"fmt"
-	"go-tsmp-map-api/library"
+	"go-tsmp-map-api/gps"
+	"go-tsmp-map-api/truckersmp"
 	"log/slog"
 	"time"
 )
 
 func main() {
-	tracker := library.NewMapAPI()
+	tracker := gps.NewMapAPI()
 	logger := slog.Default()
 
-	library.InitMap()
+	api := truckersmp.NewAPI()
+
+	user, err := api.FetchPlayerBans("5271915")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(user)
+
+	gps.InitMap()
 
 	chosenId := "anything-you-want"
 
@@ -51,7 +61,7 @@ func main() {
 			logger.Info("Target has joined the server!")
 		}
 
-		locationInfo := library.GetLocationAtCoordinates(user[0].X, user[0].Y)
+		locationInfo := gps.GetLocationAtCoordinates(user[0].X, user[0].Y)
 
 		logger.Info(fmt.Sprintf("Target is at %s, %s", locationInfo.Country, locationInfo.City))
 
