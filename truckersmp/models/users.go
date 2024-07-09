@@ -1,11 +1,5 @@
 package models
 
-type UsualResponseWrapper struct {
-	Error      bool    `json:"error"`
-	Descriptor *string `json:"descriptor"`
-	Response   any     `json:"response"`
-}
-
 type PlayerPatreonInformation struct {
 	IsPatron       bool   `json:"is_patron"`
 	Active         bool   `json:"active"`

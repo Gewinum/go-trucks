@@ -14,12 +14,52 @@ func main() {
 
 	api := truckersmp.NewAPI()
 
-	user, err := api.FetchPlayerBans("5271915")
+	/*events, err := api.FetchAllEvents()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(events.Today[0].ID)*/
+
+	/*event, err := api.FetchSpecifiedEvent("18061")
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(event)*/
+
+	events, err := api.FetchPlayerEvents("558392")
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(events)
+
+	/*user, err := api.FetchPlayerBans("5271915")
 	if err != nil {
 		panic(err)
 	}
 
 	fmt.Println(user)
+
+	servers, err := api.GetServerList()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(servers)
+
+	gameTime, err := api.GetGameTime()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(gameTime)*/
 
 	gps.InitMap()
 
