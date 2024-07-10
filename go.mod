@@ -1,4 +1,4 @@
-module go-tsmp-map-api
+module github.com/Gewinum/go-trucks
 
 go 1.22
 
