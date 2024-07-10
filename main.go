@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"go-tsmp-map-api/gps"
-	"go-tsmp-map-api/truckersmp"
 	"log/slog"
 	"time"
 )
@@ -12,7 +11,7 @@ func main() {
 	tracker := gps.NewMapAPI()
 	logger := slog.Default()
 
-	api := truckersmp.NewAPI()
+	// api := truckersmp.NewAPI()
 
 	/*events, err := api.FetchAllEvents()
 
@@ -30,13 +29,37 @@ func main() {
 
 	fmt.Println(event)*/
 
-	events, err := api.FetchPlayerEvents("558392")
+	/*events, err := api.FetchPlayerEvents("558392")
 
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(events)
+	fmt.Println(events)*/
+
+	/*vtcs, err := api.FetchVTCs()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(vtcs)*/
+
+	/*vtc, err := api.FetchVTCEventList("73079")
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(vtc)*/
+
+	/*info, err := api.FetchGameRules()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(info)*/
 
 	/*user, err := api.FetchPlayerBans("5271915")
 	if err != nil {
